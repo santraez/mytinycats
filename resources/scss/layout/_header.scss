@@ -2,5 +2,79 @@
 @use 'base/mixins' as m;
 
 .header {
-	
+	padding: 3rem 7rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	.navigation {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		flex-basis: 64rem;
+		height: auto;
+		.navigation__icon {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			img {
+				height: 12rem;
+				width: 12rem;
+				margin: 0;
+				padding: 0;
+			}
+		}
+		.navigation__bar {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			flex-basis: 48rem;
+			.navigation__bar--option {
+				font-weight: 700;
+				font-size: 2.4rem;
+				text-transform: uppercase;
+			}
+		}
+	}
+	.user-option {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		flex-basis: 27rem;
+		.user-option__button-light {
+			margin: 0;
+			padding: 0;
+			height: 5rem;
+			width: 12rem;
+			border: .7rem solid v.$black;
+			background-color: v.$white;
+			font-size: 2.4rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: v.$black;
+		}
+		.user-option__button-dark {
+			margin: 0;
+			padding: 0;
+			height: 5rem;
+			width: 12rem;
+			border: .7rem solid v.$black;
+			background-color: v.$black;
+			font-size: 2.4rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: v.$white;
+		}
+	}
 }

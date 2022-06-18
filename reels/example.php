@@ -5,18 +5,17 @@ include "../includes/templates/AMPstart.php"
 <amp-story standalone>  
   
   <amp-story-page id="cover">
-    <amp-story-grid-layer template="fill">
-      <amp-video
-        autoplay
-        loop
+  <amp-story-grid-layer template="fill">
+      <amp-img
+        src="https://amp.dev/static/samples/img/story_dog2.jpg"
         width="720"
-        height="960"
-        poster=""
+        height="1280"
         layout="responsive"
-      ><source
-        src="/build/videos/0d6a5e7c8a664494be40435d3b9af2d2.mp4"
-        type="video/mp4"
-      /></amp-video>
+      ></amp-img>
+    </amp-story-grid-layer>
+    <amp-story-grid-layer template="vertical">
+      <h1>Hello World</h1>
+      <p>This is an AMP Story.</p>
     </amp-story-grid-layer>
   </amp-story-page>
 
@@ -150,16 +149,17 @@ include "../includes/templates/AMPstart.php"
 
   <amp-story-page id="ten">
     <amp-story-grid-layer template="fill">
-      <amp-img
-        src="https://amp.dev/static/samples/img/story_dog2.jpg"
+      <amp-video
+        autoplay
+        loop
         width="720"
-        height="1280"
+        height="960"
+        poster=""
         layout="responsive"
-      ></amp-img>
-    </amp-story-grid-layer>
-    <amp-story-grid-layer template="vertical">
-      <h1>Hello World</h1>
-      <p>This is an AMP Story.</p>
+      ><source
+        src="/build/videos/0d6a5e7c8a664494be40435d3b9af2d2.mp4"
+        type="video/mp4"
+      /></amp-video>
     </amp-story-grid-layer>
   </amp-story-page>
 
