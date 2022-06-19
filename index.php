@@ -1,30 +1,8 @@
-<?php include "includes/templates/noAMPstart.php"; ?>
-
-<header class="container header">
-	<div class="navigation">
-		<div class="navigation__icon">
-			<img loading="lazy" width="200" height="300" src="/build/images/normal/icon-cat.svg" alt="cat logo">
-		</div>
-		<div class="navigation__bar">
-			<p class="navigation__bar--option">about</p>
-			<p class="navigation__bar--option">contact</p>
-			<p class="navigation__bar--option">resources</p>
-			<p class="navigation__bar--option">store</p>
-		</div>
-	</div> <!--navigation-->
-	<div class="user-option">
-		<button
-			class="user-option__button-light"
-			onclick="location.href='/login.php'">
-				log in
-		</button>
-		<button
-			class="user-option__button-dark"
-			onclick="location.href='/signup.php'">
-				sign up
-		</button>
-	</div> <!--user-option-->
-</header> <!--header-->
+<?php include
+"includes/templates/noAMPstart.php";
+"includes/templates/navbar-default.php";
+"includes/templates/navlog-default.php";
+?>
 
 <section class="container hero">
 	<div class="hero__content">
@@ -34,8 +12,7 @@
 			</h1>
 		</div>
 		<div class="hero__content--button">
-			<button
-				onclick="location.href='/'">
+			<button onclick="location.href='/user/claim-nft.php'">
 				claim nft
 			</button>
 		</div>
@@ -51,7 +28,7 @@
 
 <main class="container reel">
 	<div class="reel__title">
-		<h3>Video Cat Reels</h3>
+		<h3>video cat reels</h3>
 	</div> <!--title-->
 	<div class="reel__content">
 		<?php include "includes/templates/carousel.php"; ?>
@@ -73,8 +50,7 @@
 			</h2>
 		</div>
 		<div class="presentation__content--button">
-			<button
-				onclick="location.href='/'">
+			<button onclick="location.href='/about.php'">
 				about
 			</button>
 		</div>
@@ -96,9 +72,8 @@
 <footer class="footer">
 	<div class="footer__background"></div>
 	<div class="footer__buttons">
-		<button
-			onclick="location.href='/'">
-			about
+		<button onclick="location.href='/contact.php'">
+			contact
 		</button>
 		<div class="footer__buttons--networks">
 			<i></i>
@@ -107,10 +82,9 @@
 			<i></i>
 			<i></i>
 		</div>
-	</div> <!--buttons-->
-	<div class="footer__information">
-		<p>Lorem ipsum dolor sit amet</p>
-	</div> <!--information-->
+	</div>
 </footer> <!--footer-->
 
-<?php include "includes/templates/noAMPend.php"; ?>
+<?php include 
+"includes/templates/noAMPend.php"; 
+?>
