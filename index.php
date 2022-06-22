@@ -1,7 +1,6 @@
-<?php include
-"includes/templates/noAMPstart.php";
-"includes/templates/navbar-default.php";
-"includes/templates/navlog-default.php";
+<?php 
+	include "includes/templates/noAMPstart.php";
+	include "includes/templates/header.php";
 ?>
 
 <section class="container hero">
@@ -85,6 +84,6 @@
 	</div>
 </footer> <!--footer-->
 
-<?php include 
-"includes/templates/noAMPend.php"; 
+<?php 
+	include "includes/templates/noAMPend.php"; 
 ?>

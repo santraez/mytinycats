@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////
-// RESOURCES
+// DEPENDENCIES
 /////////////////////////////////////////////////////////
 
 // General
@@ -31,7 +31,7 @@ const terser = require('gulp-terser-js');
 /////////////////////////////////////////////////////////
 
 function css(done) {
-    src('resources/scss/**/*.scss')
+    src('src/scss/**/*.scss')
         .pipe( sourcemaps.init() )
         .pipe( plumber() )
         .pipe( sass() )
@@ -45,7 +45,7 @@ function images(done) {
     const options = {
         optimizationLevel: 3
     }
-    src('resources/images/**/*.{png,jpg}')
+    src('src/images/**/*.{png,jpg}')
         .pipe( cache( imagemin(options) ) )
         .pipe( dest('build/images') )
     done();
@@ -55,7 +55,7 @@ function versionWebp(done) {
     const options = {
         quality: 50
     };
-    src('resources/images/**/*.{png,jpg}')
+    src('src/images/**/*.{png,jpg}')
         .pipe( webp(options) )
         .pipe( dest('build/images') )
     done();
@@ -65,26 +65,26 @@ function versionAvif(done) {
     const options = {
         quality: 50
     };
-    src('resources/images/**/*.{png,jpg}')
+    src('src/images/**/*.{png,jpg}')
         .pipe( avif(options) )
         .pipe( dest('build/images') )
     done();
 }
 
 function videos(done) {
-    src('resources/videos/**/*.{mp4,ogg,webm}')
+    src('src/videos/**/*.{mp4,ogg,webm}')
         .pipe( dest('build/videos') );
     done();
 }
 
 function sounds(done) {
-    src('resources/sounds/**/*.{mp3,ogg,wav}')
+    src('src/sounds/**/*.{mp3,ogg,wav}')
         .pipe( dest('build/sounds') );
     done();
 }
 
 function javascript(done) {
-    src('resources/js/**/*.js')
+    src('src/js/**/*.js')
         .pipe( sourcemaps.init() )
         .pipe( terser() )
         .pipe( sourcemaps.write('.') )
@@ -93,8 +93,8 @@ function javascript(done) {
 }
 
 function dev(done) {
-    watch('resources/scss/**/*.scss', css);
-    watch('resources/js/**/*.js', javascript);
+    watch('src/scss/**/*.scss', css);
+    watch('src/js/**/*.js', javascript);
     done();
 }
  
