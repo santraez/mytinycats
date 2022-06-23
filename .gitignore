@@ -1,3 +1,4 @@
 node_modules/
 package-lock.json
 includes/config/database.php
+user.php

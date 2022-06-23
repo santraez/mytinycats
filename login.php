@@ -1,28 +1,51 @@
-<?php include
-"includes/templates/noAMPstart.php";
-"includes/templates/navbar-default.php";
-"includes/templates/navlog-login.php";
+<?php
+/////////////////////////////////////////////////////////
+// DATABASE
+/////////////////////////////////////////////////////////
+// IMPORT CONNECTION
+require "../includes/config/database.php";
+$db = connectDB();
+// ARRAY WITH ERROR MESSAGES
+$errors = [];
+// USER AUTHENTICATION
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // FORM CONSTANTS
+  $email = mysqli_real_escape_string($db, filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
+  $password = mysqli_real_escape_string($db, $_POST['password']);
+  // ERROR AGGREGATOR
+  if(!$email) {
+    $errors[] = 'ADD A VALID EMAIL';
+  }
+  if(!$password) {
+    $errors[] = 'ADD A PASSWORD';
+  }
+}
+/////////////////////////////////////////////////////////
+// INCLUDES HTML
+/////////////////////////////////////////////////////////
+include "includes/templates/noAMPstart.php";
+include "includes/templates/header.php";
 ?>
 
 <section class="container login">
   <h3 class="login__title">login</h3>
   <div class="login__container">
     <div class="login-up">
-      <form class="login-up__form" method="post" action="">
-        <label for="" class="login-up__form--label">Email</label>
+      <form class="login-up__form" method="POST">
+        <label for="email" class="login-up__form--label">Email</label>
         <input
           type="email"
-          id=""
-          name=""
+          id="email"
+          name="email"
           class="login-up__form--input"
           placeholder=""
           value=""
         >
-        <label for="" class="login-up__form--label">Password</label>
+        <label for="password" class="login-up__form--label">Password</label>
         <input
-          type="text"
-          id=""
-          name=""
+          type="password"
+          id="password"
+          name="password"
           class="login-up__form--input"
           placeholder=""
           value=""
@@ -39,6 +62,11 @@
   <p class="login__text"></p>
 </section> <!--login-->
 
-<?php include 
-"includes/templates/noAMPend.php"; 
-?>
+<?php
+// CLOSE THE CONNECTION
+mysqli_close($db);
+/////////////////////////////////////////////////////////
+// INCLUDES HTML
+/////////////////////////////////////////////////////////
+include "includes/templates/noAMPend.php";
+?>/******* */

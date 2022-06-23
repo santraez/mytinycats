@@ -2,7 +2,7 @@
 /////////////////////////////////////////////////////////
 // DATABASE
 /////////////////////////////////////////////////////////
-// CONNECTION DB
+// IMPORT CONNECTION
 require "includes/config/database.php";
 $db = connectDB();
 // ARRAY WITH ERROR MESSAGES
@@ -14,7 +14,7 @@ $message = '';
 // AFTER SUBMITTING THE FORM
 if($_SERVER['REQUEST_METHOD']==='POST') {
   // FORM CONSTANTS
-  $email = mysqli_real_escape_string($db, $_POST['email']);
+  $email = mysqli_real_escape_string($db, filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
   $subject = mysqli_real_escape_string($db, $_POST['subject']);
   $message = mysqli_real_escape_string($db, $_POST['message']);
   $date = date('Y/m/d');
@@ -110,6 +110,11 @@ include "includes/templates/header.php";
   </div>
 </footer> <!--footer-contact-->
 
-<?php include 
-"includes/templates/noAMPend.php"; 
+<?php
+// CLOSE THE CONNECTION
+mysqli_close($db);
+/////////////////////////////////////////////////////////
+// INCLUDES HTML
+/////////////////////////////////////////////////////////
+include "includes/templates/noAMPend.php"; 
 ?>
