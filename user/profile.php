@@ -1,7 +1,5 @@
-<?php include
-"includes/templates/noAMPstart.php";
-"includes/templates/navbar-user.php";
-"includes/templates/navlog-user-profile.php";
+<?php
+include "../includes/templates/header.php";
 ?>
 
 <section class="container profile">
@@ -92,6 +90,6 @@
   </div> <!--setting-->
 </section> <!--profile-->
 
-<?php include 
-"includes/templates/noAMPend.php"; 
+<?php
+include "../includes/templates/footer.php"; 
 ?>

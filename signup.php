@@ -1,7 +1,5 @@
-<?php include
-"includes/templates/noAMPstart.php";
-"includes/templates/navbar-default.php";
-"includes/templates/navlog-signup.php";
+<?php
+include "includes/templates/header.php";
 ?>
 
 <section class="container signup">
@@ -63,6 +61,6 @@
   </div> <!--form-->
 </section> <!--signup-->
 
-<?php include 
-"includes/templates/noAMPend.php"; 
+<?php
+include "includes/templates/footer.php"; 
 ?>

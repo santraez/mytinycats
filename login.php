@@ -3,7 +3,7 @@
 // DATABASE
 /////////////////////////////////////////////////////////
 // IMPORT CONNECTION
-require "../includes/config/database.php";
+require "includes/config/database.php";
 $db = connectDB();
 // ARRAY WITH ERROR MESSAGES
 $errors = [];
@@ -19,15 +19,46 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   if(!$password) {
     $errors[] = 'ADD A PASSWORD';
   }
+  // EMPTY ERRORS
+  if(empty($errors)) {
+    // CHECK USER EXISTS
+    $query = "SELECT * FROM users WHERE email = '$email'";
+    $result = mysqli_query($db, $query);
+    if($result->num_rows) {
+      $user = mysqli_fetch_assoc($result);
+      // CHECK PASSWORD
+      $auth = password_verify($password, $user['password']);
+      if($auth) {
+        // LOGIN
+        session_start();
+        // DATA SESSION
+        $_SESSION['user'] = $user['email'];
+        $_SESSION['login'] = true;
+        // REDIRECT
+        header('Location: /admin');
+      } else {
+        // ERROR AGGREGATOR
+        $errors[] = 'INVALID PASSWORD';
+      }
+    } else {
+      // ERROR AGGREGATOR
+      $errors[] = 'USER DOES NOT EXIST';
+    }
+  }
 }
 /////////////////////////////////////////////////////////
 // INCLUDES HTML
 /////////////////////////////////////////////////////////
-include "includes/templates/noAMPstart.php";
 include "includes/templates/header.php";
 ?>
 
 <section class="container login">
+  <!--SHOW ERRORS-->
+  <?php foreach($errors as $error): ?>
+    <div class="contact-error">
+      <?php echo $error; ?>
+    </div>
+  <?php endforeach; ?>
   <h3 class="login__title">login</h3>
   <div class="login__container">
     <div class="login-up">
@@ -68,5 +99,5 @@ mysqli_close($db);
 /////////////////////////////////////////////////////////
 // INCLUDES HTML
 /////////////////////////////////////////////////////////
-include "includes/templates/noAMPend.php";
-?>/******* */
+include "includes/templates/footer.php";
+?>

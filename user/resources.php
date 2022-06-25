@@ -1,8 +1,5 @@
-<?php include
-"includes/templates/noAMPstart.php";
-"includes/templates/navbar-user.php";
-"includes/templates/navlog-user-default.php";
-"includes/templates/user-panel.php";
+<?php
+include "../includes/templates/header.php";
 ?>
 
 <section class="container resources-view">
@@ -87,6 +84,6 @@
   </div> <!--content-->
 </section> <!--view-->
 
-<?php include 
-"includes/templates/noAMPend.php"; 
+<?php
+include "../includes/templates/footer.php"; 
 ?>

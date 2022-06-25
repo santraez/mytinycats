@@ -1,5 +1,4 @@
 <?php 
-	include "includes/templates/noAMPstart.php";
 	include "includes/templates/header.php";
 ?>
 
@@ -65,7 +64,7 @@
 </div> <!--cat-banner-->
 
 <section class="container faq-container">
-	<?php include "includes/templates/noAMPend.php"; ?>
+	<?php //include "includes/templates/noAMPend.php"; ?>
 </section> <!--faq-container-->
 
 <footer class="footer">
@@ -85,5 +84,5 @@
 </footer> <!--footer-->
 
 <?php 
-	include "includes/templates/noAMPend.php"; 
+include "includes/templates/footer.php"; 
 ?>

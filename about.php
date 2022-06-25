@@ -1,7 +1,5 @@
-<?php include
-"includes/templates/noAMPstart.php";
-"includes/templates/navbar-default.php";
-"includes/templates/navlog-default.php";
+<?php
+include "includes/templates/header.php";
 ?>
 
 <section class="container about-hero">
@@ -71,6 +69,6 @@
 	<?php include "includes/templates/noAMPend.php"; ?>
 </section> <!--faq-container-->
 
-<?php include 
-"includes/templates/noAMPend.php"; 
+<?php
+include "includes/templates/footer.php"; 
 ?>

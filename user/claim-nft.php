@@ -1,7 +1,5 @@
-<?php include
-"includes/templates/noAMPstart.php";
-"includes/templates/navbar-default.php";
-"includes/templates/navlog-user-default.php";
+<?php
+include "../includes/templates/header.php";
 ?>
 
 <section class="container claim-nft">
@@ -54,6 +52,6 @@
   </div> <!--box-->
 </section> <!--claim-nft-->
 
-<?php include 
-"includes/templates/noAMPend.php"; 
+<?php
+include "../includes/templates/footer.php"; 
 ?>

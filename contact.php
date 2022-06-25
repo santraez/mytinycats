@@ -46,22 +46,21 @@ $submitted = $_GET['submitted'] ?? null;
 /////////////////////////////////////////////////////////
 // INCLUDES HTML
 /////////////////////////////////////////////////////////
-include "includes/templates/noAMPstart.php";
 include "includes/templates/header.php";
 ?>
 
 <section class="container contact">
   <!--SHOW ERRORS-->
   <?php foreach($errors as $error): ?>
-    <div class="contact-error">
-      <?php echo $error; ?>
-    </div>
+  <div class="contact-error">
+    <?php echo $error; ?>
+  </div>
   <?php endforeach; ?>
   <!--SHOW FEEDBACK-->
   <?php if(intval($submitted) === 1): ?>
-    <p class="contact-successful">
-      Message sent succesfully.
-    </p>
+  <p class="contact-successful">
+    Message sent succesfully.
+  </p>
   <?php endif; ?>
   <h3 class="contact__title">contact</h3>
   <div class="contact__container">
@@ -116,5 +115,5 @@ mysqli_close($db);
 /////////////////////////////////////////////////////////
 // INCLUDES HTML
 /////////////////////////////////////////////////////////
-include "includes/templates/noAMPend.php"; 
+include "includes/templates/footer.php"; 
 ?>
