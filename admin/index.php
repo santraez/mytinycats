@@ -3,7 +3,7 @@
 // AUTHENTICATION
 /////////////////////////////////////////////////////////
 // OPEN SESSION
-require '../includes/functions.php';
+require '../includes/app.php';
 $auth = authenticated();
 // IF SESSION IS FALSE
 if(!$auth) {
@@ -13,7 +13,6 @@ if(!$auth) {
 // DATABASE
 /////////////////////////////////////////////////////////
 // 1. IMPORT CONNECTION
-require "../includes/config/database.php";
 $db = connectDB();
 // 2. WRITE QUERY
 $query = "SELECT * FROM contact";

@@ -3,7 +3,7 @@
 // DATABASE
 /////////////////////////////////////////////////////////
 // IMPORT CONNECTION
-require "includes/config/database.php";
+require "includes/app.php";
 $db = connectDB();
 // ARRAY WITH ERROR MESSAGES
 $errors = [];
